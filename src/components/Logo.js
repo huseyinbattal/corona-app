@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 function Logo({ logo, title }) {
   return (
     <div className="flex items-center">
-      <img src={logo} alt={title} className="mr-3 h-6 rounded-xl" />
+      <img  src={logo} alt={title} className="mr-3 h-12 rounded-xl" />
       <span className="self-center text-xl font-semibold whitespace-nowrap text-white">
         {title}
       </span>
