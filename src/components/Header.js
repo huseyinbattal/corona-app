@@ -1,25 +1,58 @@
-import React from 'react'
-import Logo from './Logo'
+import React, { useState } from "react";
+import Logo from "./Logo";
+import MenuItem from "./MenuItem";
+import PropTypes from "prop-types";
 
-function Header() {
+function Header({ activeTitle, onMenuChange }) {
+  const [_activeTitle, setActiveTitle] = useState(activeTitle);
+  const [menuItems] = useState([
+    {
+      title: "Corona values by country",
+      value: 1,
+    },
+    {
+      title: "All recorded corona values",
+      value: 2,
+    },
+    {
+      title: "Corona values by continent",
+      value: 3,
+    },
+  ]);
   return (
-      <nav className='bg-gray-800 border-gray-200 px-2'>
-          <div className='container flex flex-wrap justify-between items-center mx-auto'>
-              <Logo />
-              <div className="w-full">
-                  <ul className='flex flex-row  mt-4 font-medium space-x-8'>
-                      <li>
-                          <a className='block cursor-pointer border-0 py-2 pr-4 pl-3 text-gray-400 hover:text-blue-700'>
-                              Merhaba
-                          </a>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-      
-      
-      </nav>
-  )
+    <nav className="bg-gray-800 border-gray-200 px-2 py-2.5">
+      <div className="container flex flex-wrap justify-between items-center mx-auto">
+        <Logo />
+        <div className="w-auto block">
+          <ul className="flex flex-row font-semibold text-xs space-x-8 mt-0 ">
+            {menuItems.map((item) => {
+              return (
+                <MenuItem
+                  active={item.title === _activeTitle}
+                  key={item.value}
+                  title={item.title}
+                  onClick={(title) => {
+                    setActiveTitle(title);
+                    onMenuChange(item.value);
+                  }}
+                />
+              );
+            })}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
 }
 
-export default Header
+Header.propTypes = {
+  activeTitle: PropTypes.string,
+  onMenuChange: PropTypes.func,
+};
+
+Header.defaultProps = {
+  activeTitle: "Corona values by country",
+  onMenuChange: () => null,
+};
+
+export default Header;
