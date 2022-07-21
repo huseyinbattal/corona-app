@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Header from "./components/Header";
+import Card from "./components/Card"
+
 function App() {
   const [key, setKey] = useState(1);
   return (
@@ -11,7 +13,7 @@ function App() {
       />
 
       <div className="md:container md:mx-auto p-8  page-content ">
-        {key === 1 && "merhaba"}
+        {key === 1 && <Card/>}
       </div>
     </>
   );
