@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { API_TOKEN, API_URL } from "../consts/index";
+import Card from "../components/Card";
 
 function CoronaForCountry() {
   const [data, setData] = useState([]);
@@ -26,23 +27,33 @@ function CoronaForCountry() {
     fetchData();
   }, [queryText]);
 
-
   return (
     <>
       <div className="mb-4">
-              <input
-                  placeholder="Search by country name..."
+        <input
+          placeholder="Search by country name..."
           value={queryText}
           onChange={(e) => {
             setQueryText(e.target.value);
           }}
           className="shadow appearance-none  rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:shadow-violet-600"
-              />
-          </div>
-          
-          <div className="grid grid-cols-4 gap-4 ">
-              
-          </div>
+        />
+      </div>
+
+      <div className="grid grid-cols-4 gap-4 ">
+        {loading && <p>Loading</p>}
+        {data.map((item) => {
+          return (
+            <Card
+              key={item.country}
+              country={item.country}
+              totalDeaths={item.totalDeaths}
+              totalCase={item.totalCases}
+            totalRecovered={item.totalRecovered}
+            />
+          );
+        })}
+      </div>
     </>
   );
 }
