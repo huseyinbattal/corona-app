@@ -13,13 +13,12 @@ function CoronaForCountry() {
       `${API_URL}countriesData?country=${queryText}`,
       {
         headers: {
-              authorization: API_TOKEN,
-            
+          authorization: API_TOKEN,
         },
       }
     );
-      
-      setData(response.data.result)
+
+    setData(response.data.result);
     console.log(response);
   };
 
@@ -27,14 +26,25 @@ function CoronaForCountry() {
     fetchData();
   }, [queryText]);
 
-    return (
-        <>
-            <div className="mb-4">
-                <input value={queryText} onChange={(e)=>{setQueryText(e.target.value)}} />
-            </div>
-        </>
-    )
 
+  return (
+    <>
+      <div className="mb-4">
+              <input
+                  placeholder="Search by country name..."
+          value={queryText}
+          onChange={(e) => {
+            setQueryText(e.target.value);
+          }}
+          className="shadow appearance-none  rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:shadow-violet-600"
+              />
+          </div>
+          
+          <div className="grid grid-cols-4 gap-4 ">
+              
+          </div>
+    </>
+  );
 }
 
 export default CoronaForCountry;
