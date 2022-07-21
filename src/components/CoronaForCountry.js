@@ -30,7 +30,7 @@ function CoronaForCountry() {
     return (
         <>
             <div className="mb-4">
-                <input value={queryText}/>
+                <input value={queryText} onChange={(e)=>{setQueryText(e.target.value)}} />
             </div>
         </>
     )
