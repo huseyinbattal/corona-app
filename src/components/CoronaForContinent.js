@@ -56,7 +56,7 @@ function CoronaForContinent() {
   return (
     <div className="flex flex-col">
       <div className="inline-block min-w-full">
-        <h1 className="text-2xl mb-4 font-bold text-purple-400">Corona Values By Continents</h1>
+        <h1 className="text-4xl mb-12 font-bold text-yellow-500">Corona Values By Continents</h1>
         <div className="overflow-hidden shadow-md">
           {loading ? (
             <p>Loading...</p>

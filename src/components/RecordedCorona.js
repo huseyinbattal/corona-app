@@ -27,7 +27,8 @@ function RecordedCorona() {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <>
+          <>
+            <h1 className="text-7xl mb-12 text-yellow-500">All Records</h1>
           <h1 className="text-6xl text-gray-600 mb-4">
             Total Cases:{" "}
             <span className="text-red-300 font-semibold">

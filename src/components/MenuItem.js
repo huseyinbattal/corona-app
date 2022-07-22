@@ -9,8 +9,8 @@ function MenuItem({ title, active, onClick }) {
           onClick(title);
         }}
         className={`block cursor-pointer border-0 py-2 pr-4 pl-3  ${
-          active ? "text-blue-700" : "text-gray-400"
-        } hover:text-blue-700`}
+          active ? "text-yellow-400" : "text-white"
+        } hover:text-red-300 text-xl`}
       >
         {title}
       </a>

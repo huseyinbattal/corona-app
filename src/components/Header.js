@@ -7,20 +7,21 @@ function Header({ activeTitle, onMenuChange }) {
   const [_activeTitle, setActiveTitle] = useState(activeTitle);
   const [menuItems] = useState([
     {
-      title: "Corona values by country",
+      title: "Countries",
       value: 1,
     },
+  
     {
-      title: "All recorded corona values",
-      value: 2,
+      title: "Continents",
+      value: 3,
     },
     {
-      title: "Corona values by continent",
-      value: 3,
+      title: "All Records",
+      value: 2,
     },
   ]);
   return (
-    <nav className="bg-gray-800 border-gray-200 px-2 py-2.5">
+    <nav className="bg-purple-600 border-gray-200 px-2 py-2.5">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <Logo onMenuChange={ onMenuChange} />
         <div className="w-auto block">

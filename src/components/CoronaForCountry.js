@@ -32,12 +32,13 @@ function CoronaForCountry() {
     <>
       <div className="mb-4">
         <input
-          placeholder="🔎 Search by country name"
+          placeholder="🔎 Search by country name..."
           value={queryText}
           onChange={(e) => {
-            setQueryText(e.target.value);
+            setQueryText((e.target.value));
+            console.log(e.target.value)
           }}
-          className="text-purple-500 shadow border-2 appearance-none  rounded w-full py-2 px-3 font-bold text-2xl focus:outline-none focus:shadow-violet-600"
+          className="text-red-400 shadow border-2 appearance-none  rounded w-full py-2 px-3 font-bold text-2xl focus:outline-none focus:shadow-violet-600"
         />
       </div>
       {loading && <p>Loading</p>}
