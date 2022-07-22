@@ -18,9 +18,10 @@ function CoronaForCountry() {
         },
       }
     );
-setLoading(false)
+    setLoading(false);
     setData(response.data.result);
-    console.log(response);
+    
+    //console.log(response);
   };
 
   useEffect(() => {
@@ -31,18 +32,17 @@ setLoading(false)
     <>
       <div className="mb-4">
         <input
-          placeholder="Search by country name..."
+          placeholder="🔎 Search by country name"
           value={queryText}
           onChange={(e) => {
             setQueryText(e.target.value);
           }}
-          className="shadow appearance-none  rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:shadow-violet-600"
+          className="text-purple-500 shadow border-2 appearance-none  rounded w-full py-2 px-3 font-bold text-2xl focus:outline-none focus:shadow-violet-600"
         />
       </div>
       {loading && <p>Loading</p>}
-      <br/>
+      <br />
       <div className="grid grid-cols-4 gap-4 ">
-       
         {data.map((item) => {
           return (
             <Card
