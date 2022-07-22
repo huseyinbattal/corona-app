@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Header from "./components/Header";
-import Card from "./components/Card"
 import CoronaForCountry from "./components/CoronaForCountry";
+import RecordedCorona from "./components/RecordedCorona";
 
 function App() {
   const [key, setKey] = useState(1);
@@ -14,7 +14,9 @@ function App() {
       />
 
       <div className="md:container md:mx-auto p-8  page-content ">
-        {key === 1 && <CoronaForCountry/>}
+        {key === 1 && <CoronaForCountry />}
+        {key === 2 && <RecordedCorona/>}
+        
       </div>
     </>
   );
