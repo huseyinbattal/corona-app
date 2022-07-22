@@ -18,7 +18,7 @@ function CoronaForCountry() {
         },
       }
     );
-
+setLoading(false)
     setData(response.data.result);
     console.log(response);
   };
@@ -39,9 +39,10 @@ function CoronaForCountry() {
           className="shadow appearance-none  rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:shadow-violet-600"
         />
       </div>
-
+      {loading && <p>Loading</p>}
+      <br/>
       <div className="grid grid-cols-4 gap-4 ">
-        {loading && <p>Loading</p>}
+       
         {data.map((item) => {
           return (
             <Card
