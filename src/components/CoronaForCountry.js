@@ -49,7 +49,7 @@ function CoronaForCountry() {
               country={item.country}
               totalDeaths={item.totalDeaths}
               totalCase={item.totalCases}
-            totalRecovered={item.totalRecovered}
+              totalRecovered={item.totalRecovered}
             />
           );
         })}
